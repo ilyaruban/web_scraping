@@ -22,7 +22,6 @@ with open('data.json', 'w', encoding='utf-8') as data_json:
       name = i.find('a').text
       salary = i.find('span', class_='bloko-header-section-2')
       company_name = i.find('div', class_='bloko-text').text
-      print(i.find('a').text)
       if salary is not None:
         salary = i.find('span', class_='bloko-header-section-2').text
         salary_str = str(salary)
