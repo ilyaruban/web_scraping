@@ -14,8 +14,8 @@ with open('data.json', 'w', encoding='utf-8') as data_json:
   responce = requests.get(url, headers = headers)
   html_data = responce.text
   soup = bs4.BeautifulSoup(html_data, features='lxml')
-  span_tag = soup.find_all('div', class_='serp-item')
-  for i in span_tag:
+  div_tag = soup.find_all('div', class_='serp-item')
+  for i in div_tag:
     if 'django' in i.find('a').text.lower() or 'flask' in i.find('a').text.lower():
       city = i.find('div', attrs = {'data-qa': 'vacancy-serp__vacancy-address'}).text
       href = i.find('a').get('href')
